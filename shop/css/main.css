@@ -2,7 +2,7 @@
 		margin: 0;
 		padding: 0;
 		font-size: 16px;
-		behavior:url(css/csshover.htc);
+		
 	}
 	ul{
 		list-style: none;
@@ -35,6 +35,10 @@
 		margin-top: 7px;
 		margin-right: 5px;
 	}
+	.top-one .tleft:hover{
+		cursor: pointer;
+		color: red;
+	}
 	.top-one .tleft{
 		height: 30px;
 		line-height: 30px;
@@ -55,7 +59,7 @@
 		text-align: center;
 	}
 	.top-two input{
-		padding-left: 15px;
+		padding-left: 25px;
 		padding-right: 25px;
 		border-radius: 15px;
 		margin-left: 200px;
@@ -65,6 +69,8 @@
 		margin-right: 5px;
 		font-size: 20px;
 		line-height: 35px;
+		background: url(../images/ss.png) no-repeat 5px center;
+		background-size: 18px 18px; 
 	}
 	a:hover{
 		color: red;
