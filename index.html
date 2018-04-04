@@ -48,13 +48,15 @@
                             <li><a href="#"  class="selected">To do List</a></li>                
                         </ul>
 					</div>
-                    <div class="tabcontent_section">   
+                    <div class="tabcontent_section"> 
+                     <a href="A.html" style="color: red;font-size: 20px;">ATM样式页点击跳转</a> 
 					</div>
                 </div>
             	
                 <div class="right_section">
                 	<h2>1</h2>
-   
+                    两个弹出框同时弹出时，因为点击第二个弹出框时阻止了事件冒泡，
+                    导致Tostarcss函数不会被触发，第一个弹出框会保留当前状态导致两个弹出框同时弹出，之后需要重新点击第一个框的触发Btn才能收回。暂时解决方法，每次点击时加判定事件，如果当前有弹出框就不阻止冒泡，但是代码比较繁琐，需要每个都添加。第二个办法给每个点击弹出时间增加一个setTimeout时间，规定每次弹出停留时间，自动恢复初始状态。第一种出现问题解决问题，第二种绕过问题，第三种不出现问题的js代码正在finding..
                 </div>
                 
                 <div class="right_section">

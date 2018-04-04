@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"> 
+	<title>atm可视化</title>
+ <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"> 
+<script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script><script src="https://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<style type="text/css">
+	a{
+		color: #fff
+	}
+	li{
+		width: 200px;
+		text-align: center;
+		font-family: '楷体';
+		font-size: 25px;
+		font-weight: bold;
+	}
+	#myTabContent{
+		margin-top: 30px;
+		border: 2px dashed #0063B1;
+		width: 100%;
+		font-size: 21px;
+		min-height: 500px;
+		padding: 55px 200px 0px
+	}
+
+	form .a-upload {
+    padding: 4px 10px;
+    
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 0 20px;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+ form .a-upload  input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+
+ form .a-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+#meThod{
+	display: inline-block;
+	width: 400px;
+
+}
+#meThod button{
+	width: 100px;
+	margin: 20px 0 0 20px;
+}
+#Bottom label{
+	vertical-align: middle;
+	font-weight:normal;
+	margin: 0 5px;
+} 
+#Bottom label:hover{
+	cursor: pointer;
+
+}
+#Bottom input{
+	width: 25px;
+	height:25px;
+	vertical-align: middle;
+} 
+#Bottom input:checked{
+	color: red
+
+}
+.til{
+	width:100%;
+	border-bottom: 2px solid #D2D2D2;
+	padding-bottom: 5px;
+	margin: 8px 0;
+	font-weight: bold;
+	padding-left: 20px;
+}
+ table{
+	border: 2px solid #8A8A8A;
+	margin: 0 auto;
+	text-align: center;
+}
+ table caption{
+	text-align: center;
+}
+ table thead{
+  background: #DADADA;
+  font-weight: bold;
+  text-align: center;
+}
+ table td{
+	width: 200px;
+	height: 25px;
+	border:1px solid #B2B2B2;
+}
+.circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 50%;
+    background: red;
+    margin: 0 auto;
+}
+     
+.clip_left,.clip_right{
+    width:200px;
+    height:200px;
+    position: absolute;
+    top: 0px;left: 0px;
+}
+.circle_left, .circle_right{
+    width:200px;
+    height:200px;
+    position: absolute;
+    border-radius: 50%;
+    top: 0px;left: 0px;
+    background: #008282;
+}
+
+.circle_right,.clip_right {
+    clip:rect(0,auto,auto,100px);
+}
+.circle_left , .clip_left{
+    clip:rect(0,100px,auto,0);
+}
+
+.mask {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    left: 25px;
+    top: 25px;
+    background: #FFF;
+    position: absolute;
+    text-align: center;
+    line-height: 150px;
+    font-size: 16px;
+}
+
+</style> 
+</head>
+<body>
+<div style="width: 1000px;margin: 0 auto">
+	
+  <ul id="myTab" class="nav nav-tabs" style="background-color:#0063B1;padding:10px 0 0 200px;">
+    <li >
+        <a href="#first" data-toggle="tab" >参数调优
+        </a>
+    </li>
+    <li ><a href="#two" data-toggle="tab">分类器</a></li>
+    <li class="active">
+        <a href="#three" data-toggle="tab">预测</a>
+    </li>
+</ul>
+
+
+<div id="myTabContent" class="tab-content" >
+    <div class="tab-pane fade in " id="first">
+    <form  action="" method="post">
+    <p class="til">数据集：</p>
+    <a href="javascript:;" class="a-upload" style="vertical-align: middle;">
+    <input type="file" name="csvfile" id="" accept="csv">上传csv文件
+	</a>
+	<a href="javascript:;" class="a-upload" style="vertical-align: middle;">
+    <input type="file" name="imgfile" id="" accept="image/*">上传图片
+	</a>
+  		<span id="success">
+          <span class="glyphicon glyphicon-ok" style="vertical-align: middle;border-radius: 50%;background:green;color: #FFF;padding: 3px;margin: 0 3px 0 50px"></span>  <span style="vertical-align: middle;">上传成功
+        </span> 
+        </span>
+        </form>
+      <div>
+      	<p class="til">分类方法：</p>
+      	<div id="meThod">
+      	<button id="fat-btn" class="btn " type="button"> svm
+		</button>
+		<button id="fat-btn" class="btn " type="button"> cnn
+		</button>
+		<button id="fat-btn" class="btn " type="button"> adaboost
+		</button>
+		<button id="fat-btn" class="btn " type="button"> 决策树
+		</button>
+		</div>
+      	<a href="#">
+          <span class="glyphicon glyphicon-plus" style="color: #BBBEC2;border: 1px solid  #BBBEC2;border-radius: 50%;font-size: 16px;padding: 4px;"></span>
+        </a>
+        <div id="Bottom">
+      	<p class="til">模型评估方法：</p>
+      	<p>
+      	<input type="radio" name="checkMethod" id="a"><label for="a">F1-score</label>
+      	<input type="radio" name="checkMethod" id="b"><label for="b">accuracy</label>
+      	<input type="radio" name="checkMethod" id="c"><label for="c">ROC_AUCscore</label>
+      	</p>
+      	<button style="margin-left: 400px">开始调参</button>
+      	</div>
+      	
+      </div>
+        
+
+
+    
+ 
+    </div>
+    <div class="tab-pane fade in " id="two">
+    <div id="T-top">
+    	<p class="til">调参共耗时30s,使用高斯过程实现超参数选择</p>
+
+    	<button style="margin:15px 0 0 400px;">保存到本地</button>
+
+    </div>
+    <div id="T-bot">
+    	<p class="til">分类器表现评估</p>
+    	<div class="circle">
+            <!--左半边圆-->
+            <div class="circle_left">
+                <div class="clip_left">
+                     
+                </div>
+            </div>
+            <!--右半边圆-->
+            <div class="circle_right">
+                <div class="clip_right"></div>
+            </div>
+            <div class="mask">
+                <span>40</span>%
+            </div>
+        </div>
+    	<table>
+    		<caption>每一个标签上的表现</caption>
+    		<thead>
+    			<tr>
+    				<td>标签</td>
+    				<td>评分</td>
+    			</tr>
+    		</thead>
+    		<tbody>
+    			<tr>
+    				<td>1</td>
+    				<td>1</td>
+    			</tr>
+    			<tr>
+    				<td>1</td>
+    				<td>1</td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+
+    </div>
+    <div class="tab-pane fade in active" id="three">
+      			
+					<p class="til">添加数据记录：
+					      	<a href="#" style="margin-left: 330px;">
+          <span class="glyphicon glyphicon-plus" style="color: #BBBEC2;border: 1px solid  #BBBEC2;border-radius: 50%;font-size: 16px;padding: 4px;"></span>
+        </a>
+					</p>
+
+				
+				
+					<table id="table1" border="1px" cellspacing="0px" cellpadding="0px">
+						<thead>
+							<td>特征1</td>
+							<td>特征1</td>
+							<td>特征1</td>
+							<td>特征1</td>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Data</td>
+							<td>Data</td>
+							<td>Data</td>
+							<td>Data</td>
+						</tr>
+						</tbody>
+					</table>
+				
+					<p style="border-top:2px solid #D2D2D2;margin-top: 10px;padding-left: 20px;">or图片：
+					      	<a href="#" style="margin-left: 400px;">
+          <span class="glyphicon glyphicon-plus" style="color: #BBBEC2;border: 1px solid  #BBBEC2;border-radius: 50%;font-size: 16px;padding: 4px;"></span>
+        </a></p>
+
+					
+						<span class="glyphicon glyphicon-picture" style="margin-left: 20px;"></span>
+					
+					
+						<button style="margin-left: 450px;">预测</button>
+					
+			
+					<p class="til">预测结果：</p>
+					<table border="1px" cellspacing="0px" cellpadding="0px">
+						<thead>
+							<td>特征</td>
+							<td>预测概率</td>
+						</thead>
+						<tbody>
+						<tr>
+							<td>Data</td>
+							<td>Data</td>
+						</tr>
+						<tr>
+							<td>Data</td>
+							<td>Data</td>
+						</tr>
+						<tr>
+							<td>Data</td>
+							<td>Data</td>
+						</tr>
+						<tr>
+							<td>Data</td>
+							<td>Data</td>
+						</tr>
+						</tbody>
+					</table>
+			
+    </div>
+
+</div>
+</div>
+
+<script>
+    $(function(){
+        if( $('.mask span').text() <= 50 ){
+            $('.circle_right').css('transform','rotate('+($('.mask span').text()*3.6)+'deg)');
+        }else{
+            $('.circle_right').css({
+                'transform':'rotate(0deg)',
+                "background":"red"
+            });
+            $('.circle_left').css('transform','rotate('+(($('.mask span').text()-50)*3.6)+'deg)');
+        }
+    })
+</script>
+</body>
+</html>
