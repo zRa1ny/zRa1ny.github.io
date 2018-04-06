@@ -3,6 +3,8 @@ $(function(){
         Circle();
         clickAdd();
         clickreMove();
+        mousequest();
+        clickli();
         
     })
 function successHidden(){
@@ -22,8 +24,7 @@ function imgShow(){
 
     reader.onload = function () {
         All["allimg"+i]=this.result;
-        var img=$('<img src="" />').attr("src", this.result);
-        $("#showimg").append($(img)) ;   
+        $("#showimg").find("img").attr("src", this.result);
     }
    }  
 }
@@ -180,13 +181,79 @@ function firstAjax(i,url){
 }
 function clickAdd(){
     $('#spana').click(function(){
-       if($(this).siblings().hasClass("hidden")){
-         var obj=$(this).siblings().filter('.hidden').eq(0)
-             obj.removeClass('hidden');
-             obj.addClass('look')
-       }
+    if ($('#usl').hasClass('hidden')) {
+    $('#usl').removeClass('hidden')
+    $('#usl2').removeClass('hidden')
+     var oBt=$(this).siblings(".hidden").each(function(i){
+        if (i<8) {
+           
+    	$('#usl').append("<li class='list-group-item'>"+$(this).text()+"<span class='quest' >?</span>"+"<span class='lookspan'>"+$(this).next().text()+"</spam>"+"</li>") 
+        }else{
+        $('#usl2').append("<li class='list-group-item'>"+$(this).text()+"<span class='quest' >?</span>"+"<span class='lookspan'>"+$(this).next().text()+"</spam>"+"</li>") 
+        }
     })
 }
+    
+})
+}
+function clickli(){
+    $('#usl').on('click','li',(function(e){ 
+        e.stopPropagation();
+        var Text
+        if (e.target.nodeName.toLowerCase()=='li') {
+            Text=$(e.target).text().split('?')[0];
+        }else{
+            Text=$(e.target).parent().text().split('?')[0];
+        }
+        var Ball=$("#meThod").find('button')
+        for (var i = 0; i < Ball.length; i++) {
+            if($(Ball[i]).text()==Text){
+                $(Ball[i]).removeClass('hidden')
+            }
+        }
+        $('#usl').empty().addClass('hidden');
+        $('#usl2').empty().addClass('hidden');
+    }))
+        $('#usl2').on('click','li',(function(e){ 
+        e.stopPropagation();
+        var Text
+        if (e.target.nodeName.toLowerCase()=='li') {
+            Text=$(e.target).text().split('?')[0];
+        }else{
+            Text=$(e.target).parent().text().split('?')[0];
+        }
+        var Ball=$("#meThod").find('button')
+        for (var i = 0; i < Ball.length; i++) {
+            if($(Ball[i]).text()==Text){
+                $(Ball[i]).removeClass('hidden')
+            }
+        }
+        $('#usl').empty().addClass('hidden');
+        $('#usl2').empty().addClass('hidden');
+    }))
+}
+
+
+function mousequest(){
+            
+    // })
+        $('#usl').on('mouseover','span',(function(e){
+            var Etarget=$(e.target).next()
+             Etarget.css('display','block')
+             $(e.target).mouseout(function(){
+              Etarget.css('display','none')
+             })  
+        }))
+         $('#usl2').on('mouseover','span',(function(e){
+            var Etarget=$(e.target).next()
+             Etarget.css('display','block')
+             $(e.target).mouseout(function(){
+              Etarget.css('display','none')
+             })  
+        }))
+
+}
+
 function clickreMove(){
     $('#meThod').on('click','button',function(e){
        $(e.target).addClass('hidden');

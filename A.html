@@ -186,7 +186,7 @@
     position: relative;
      left: -105px;
     
-   opacity: 0;
+    opacity: 0;
     filter: alpha(opacity=0);
     cursor: pointer
 }
@@ -216,25 +216,91 @@
 #success:hover{
 	cursor: pointer;
 }
+#usl{
+    padding: 0;
+    position: absolute;
+    top: -80px;
+    right: -40px;
+    font-weight: normal;
+    margin-right: 5px;
+}
+#usl2{
+    padding: 0;
+    position: absolute;
+    top: -80px;
+    right: -200px;
+    font-weight: normal;
+}
+#usl2 li{
+    position: relative;
+    padding: 5px 20px;
+    width: 150px;
+    overflow: visible;
+}
+#usl li{
+    position: relative;
+    padding: 5px 20px;
+    margin-left: 10px;
+    width: 150px;
+    overflow: visible;
+}
+#usl2 li:hover,#usl li:hover{
+    cursor: pointer;
+}
+.lookspan{
+    display: none;
+    width: 200px;
+    height: 30px;
+    border: 1px solid #B2B2B2;
+    position: absolute;
+    font-size: 16px;
+    z-index: 200;
+    background:#B2B2B2; 
+    color: #FFF; 
+    left: 140px;
+    top: 7px;
+
+}
+
+.quest{
+    background: black;
+    display: inline-block;
+    width: 20px;
+    color: #FFF;
+    font-size: 16px;
+    border-radius: 50%;
+    height: 20px;
+    right: 10px;
+    top: 15px;
+    position: absolute;
+}
+.lookspan:hover,.quest:hover{
+
+    box-shadow: 0 0 1px 1px blue;
+    -ms-box-shadow: 0 0 1px 1px blue;
+    -moz-box-shadow: 0 0 1px 1px blue;
+    -webkit-box-shadow: 0 0 1px 1px blue;
+    -o-box-shadow: 0 0 1px 1px blue;
+}
 </style> 
 </head>
 <body>
 <div style="width: 1000px;margin: 0 auto">
 	
   <ul id="myTab" class="nav nav-tabs" style="background-color:#0063B1;padding:10px 0 0 200px;">
-    <li >
+    <li class="active">
         <a href="#first" data-toggle="tab" >参数调优
         </a>
     </li>
     <li ><a href="#two" data-toggle="tab">分类器</a></li>
-    <li class="active">
+    <li >
         <a href="#three" data-toggle="tab">预测</a>
     </li>
 </ul>
 
 
 <div id="myTabContent" class="tab-content" >
-    <div class="tab-pane fade in " id="first">
+    <div class="tab-pane fade in active" id="first">
     
     <p class="til">数据集：</p>
     <a href="javascript:;" class="a-upload" style="vertical-align: middle;">
@@ -251,14 +317,51 @@
       <div style="position: relative;">
       	<p class="til">分类方法：</p>
       	<div id="meThod">
-      	<button id="fat-btn1" class="btn look" type="button">svm</button>
-		<button id="fat-btn2" class="btn look" type="button">cnn</button>
-	   <button id="fat-btn3" class="btn look" type="button">adaboost</button>
-		<button id="fat-btn4" class="btn look" type="button">决策树</button>
+      	<button id="fat-btn1" class="btn look" type="button">logreg</button>
+        <span style="display: none;">logistic regression</span>
+		<button id="fat-btn2" class="btn hidden" type="button">svm</button>
+        <span style="display: none;">support vector machine</span>
+	   <button id="fat-btn3" class="btn hidden" type="button">sgd</button>
+       <span style="display: none;">stochastic gradient descent</span>
+		<button id="fat-btn4" class="btn hidden" type="button">dt</button>
+        <span style="display: none;">decision tree</span>
+		<button id="fat-btn5" class="btn hidden" type="button">et</button>
+        <span style="display: none;">extra trees</span>
+		<button id="fat-btn6" class="btn hidden" type="button">rf</button>
+        <span style="display: none;">random forest</span>
+		<button id="fat-btn7" class="btn hidden" type="button">gnb</button>
+        <span style="display: none;">gaussian naive_bayes</span>
+		<button id="fat-btn8" class="btn hidden" type="button">mnb</button>
+        <span style="display: none;">multinomial naive bayes</span>
+		<button id="fat-btn9" class="btn hidden" type="button">bnb</button>
+        <span style="display: none;">bernoulli naive bayes</span>
+		<button id="fat-btn10" class="btn hidden" type="button">gp</button>
+        <span style="display: none;"> gaussian process</span>
+		<button id="fat-btn11" class="btn hidden" type="button">knn</button>
+        <span style="display: none;">k nearest neighbors</span>
+		<button id="fat-btn12" class="btn hidden" type="button">mlp</button>
+        <span style="display: none;">multi layer perceptron</span>
+		<button id="fat-btn13" class="btn hidden" type="button">ada</button>
+        <span style="display: none;">adaboost</span>
+		<button id="fat-btn14" class="btn hidden" type="button">cnn</button>
+        <span style="display: none;">convolutional neural network</span>
+		<button id="fat-btn15" class="btn hidden" type="button">rnn</button>
+        <span style="display: none;">Recurrent Neural Networks</span>
+		<button id="fat-btn16" class="btn hidden" type="button">pa</button>
+        <span style="display: none;">passive aggressive</span>
 		
-      	<a href="javascript:;" id="spana">
+      	<a href="javascript:;" id="spana" >
           <span class="glyphicon glyphicon-plus" style="color: #BBBEC2;border: 1px solid  #BBBEC2;border-radius: 50%;font-size: 16px;padding: 4px;position: absolute;left: 450px;top: 65px;"></span>
+
         </a>
+          <ul class="hidden" id="usl">
+                
+
+         </ul>
+          <ul class="hidden" id="usl2">
+                
+
+         </ul>
         </div>
         <div id="Bottom">
       	<p class="til">模型评估方法：</p>
@@ -324,7 +427,7 @@
     </div>
 
     </div>
-    <div class="tab-pane fade in active" id="three">
+    <div class="tab-pane fade in " id="three">
       			
 					<p class="til" style="position: relative;">添加数据记录：
 					      	<a href="javascript:threeFJ()" id="threeFJ" style="margin-left: 330px;">
@@ -377,14 +480,14 @@
 					      	<a href="javascript:" style="margin-left: 400px;">
           <span id="sh" class="glyphicon glyphicon-plus" style="color: #BBBEC2;border: 1px solid  #BBBEC2;border-radius: 50%;font-size: 16px;padding: 4px;vertical-align: middle;"
           >
-          <a id="ssa" href="javascript:"><input type="file" name="imgfile" id="sin" accept="image/*" onchange="imgShow()" multiple="multiple "></a>
+          <a id="ssa" href="javascript:"><input type="file" name="imgfile" id="sin" accept="image/*" onchange="imgShow()" ></a>
           </span>
 
         </a></p>
 
 					<div style="margin-top: 10px;padding-right: 10px;position: relative;">
                     <div id="showimg">
-                      
+                         <img src="" > 
                     </div>
 					<button id="forecast" style="position: absolute;left:460px;width: 130px" onclick="Forecast('http://localhost:8080/Ajax/测试.php')">预测</button>
 					</div>
