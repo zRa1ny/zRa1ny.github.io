@@ -335,3 +335,92 @@ form{
 	box-shadow: 0 0 2px 1px #FFF;
 	cursor: pointer;
 }
+        #gallery
+        {   font-family: "微软雅黑";
+            width: 560px;
+            position: relative;
+            min-height: 420px;
+            
+        }
+
+            /*标题*/
+
+        #gallery ul
+        {	
+            width: 70px;
+            float: right;
+            list-style: none;
+            
+        }
+
+        #gallery ul li
+        {
+            float: left;
+            margin: 10px 3px; 
+        }
+        #gallery ul li span:hover{
+            box-shadow: 0 0 1px 2px black;
+            cursor: pointer;
+        }
+
+        #gallery ul li span
+        {
+            display: block;
+            position: relative;
+            width: 60px;
+            height: 80px;
+            border: 1px solid #fff;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            -ms-border-radius: 4px;
+            -o-border-radius: 4px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #gallery  ul li span img
+        {
+            position: relative;
+
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+            width: 60px;
+            height: 80px;
+        }
+
+        #gallery ul li span.touch img, #gallery ul li:hover span img
+        {
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+
+        #gallery ul li:hover div
+        {
+            display: block;
+        }
+
+        #gallery ul li div  img
+        {
+            width: 460px;
+            height: 288px;
+        }
+
+        #gallery ul li div
+        {
+            display: none;
+            position: absolute;
+            top: 30px;
+            left: 0px;
+            border: 5px solid #fff;
+        }
+
+        .clearfix
+        {
+            clear: both;
+            border: none;
+            width: 0px;
+            height: 0px;
+            background: none;
+        }
+ 
+
