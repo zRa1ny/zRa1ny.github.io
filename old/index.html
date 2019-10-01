@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>张锐个人博客</title>
+<meta name="keywords" content="个人博客,张锐,前端,自学,自学前端" />
+<meta name="description" content="记录自学前端经历和交流学习" />
+<link href="bolar.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="mod.js"></script>
+<script type="text/javascript" src="writeBo.js"></script>
+</head>
+<body>
+
+	<div id="header_panel">
+    	<div id="title_section">
+				<h1>Continuous forwarder</h1><br>
+	  A bold idea is going on</div>
+    </div> <!-- end of templatemo header panel -->
+    
+    <div id="menu_panel">
+    	<div id="menu_section">
+            <ul>
+                <li><a href="index.html"  class="current">首页</a></li>
+                <li><a href="javascript:" id="two">前端笔记</a></li>
+                <li><a href="#conImg" id="three">相册</a></li>
+                <li><a href="javascript:" id="four">作品通道</a>
+                <a href="shop/demo.html" id="shopbtn">进入shop</a>
+                </li>  
+                <li><a href="javascript:" id="five">关于我</a></li>                      
+            </ul> 
+		</div>
+    </div> <!-- end of menu -->
+    
+	<div id="content_container">
+        <div id="content">
+            <div id="content_left">
+                <div class="post_wrapper">
+                <div id="conText" class="post">
+                </div>
+                </div> <!-- End of a post-->
+                <div class="post_wrapper">
+                <div id="conImg" class="post">
+                    <h2 style="text-align: center;margin: 0px;">企业官网项目</h2>
+                    <div id="gallery">
+                        <ul >
+                            <li>
+                                <span class="touch" style="width: 60px;height:80px;position: absolute;right:10px ;top: 35px;"><img src="images/hj1.png"/></span>
+
+                                <div style="display: block;">
+                                    <img src="images/hj1.png"/>
+                                </div>
+                            </li>
+
+                            <li>
+                                <span style="width: 60px;height:80px;position: absolute;right:10px;top: 130px;"><img src="images/hj2.png"/></span>
+
+                                <div>
+                                    <img src="images/hj2.png"/>
+                                </div>
+                            </li>
+                            <li>
+                                <span style="width: 60px;height:80px;position: absolute;right:10px ;top: 226px;"><img src="images/hj3.png"/></span>
+
+                                <div>
+                                    <img src="images/hj3.png"/>
+                                </div>
+                            </li>
+
+                            <li >
+                                <span style="width: 80px;height:60px;position: absolute;left: 0px;bottom: 13px;"><img src="images/hj4.png" style="width: 80px;" /></span>
+
+                                <div>
+                                    <img src="images/hj4.png" />
+                                </div>
+                            </li>
+
+                            <li >
+                                <span style="width: 80px;height:60px;position: absolute;left: 100px;bottom: 13px;"><img src="images/hj5.png" style="width: 80px;"/></span>
+
+                                <div>
+                                    <img src="images/hj5.png"/>
+                                </div>
+                            </li>
+                            <li >
+                                <span style="width: 80px;height:60px;position: absolute;left: 200px;bottom: 13px;"><img src="images/hj6.png" style="width: 80px;"/></span>
+
+                                <div>
+                                    <img src="images/hj6.png"/>
+                                </div>
+                            </li>
+                            <li >
+                                <span style="width: 80px;height:60px;position: absolute;left: 300px;bottom: 13px;"><img src="images/hj7.png" style="width: 80px;"/></span>
+
+                                <div>
+                                    <img src="images/hj7.png"/>
+                                </div>
+                            </li>
+                              <li >
+                                <span style="width: 80px;height:60px;position: absolute;left: 400px;bottom: 13px;"><img src="images/hj8.png" style="width: 80px;"/></span>
+
+                                <div>
+                                    <img src="images/hj8.png"/>
+                                </div>
+                            </li>
+                            <li >
+                                <span style="width: 60px;height:80px;position: absolute;right:10px ;top: 322px;"><img src="images/hj9.png" style="width: 80px;"/></span>
+
+                                <div>
+                                    <img src="images/hj9.png"/>
+                                </div>
+                            </li>
+
+
+                        </ul>
+
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                </div> 
+            </div> <!-- end of content left -->
+        
+            <div id="content_right">
+            
+            	<div class="right_section">
+					<div class="tag_section">
+                        <ul id="countrytabs" class="shadetabs">
+                            <li><a href="#"  class="selected">To do List</a></li>                
+                        </ul>
+					</div>
+                    <div class="tabcontent_section"> 
+                     <a href="A.html" style="color: red;font-size: 20px;">ATM样式页点击跳转</a> 
+					</div>
+                </div>
+            	
+                <div class="right_section">
+                	<h2>1</h2>
+                    两个弹出框同时弹出时，因为点击第二个弹出框时阻止了事件冒泡，
+                    导致Tostarcss函数不会被触发，第一个弹出框会保留当前状态导致两个弹出框同时弹出，之后需要重新点击第一个框的触发Btn才能收回。暂时解决方法，每次点击时加判定事件，如果当前有弹出框就不阻止冒泡，但是代码比较繁琐，需要每个都添加。第二个办法给每个点击弹出时间增加一个setTimeout时间，规定每次弹出停留时间，自动恢复初始状态。第一种出现问题解决问题，第二种绕过问题，第三种不出现问题的js代码正在finding..
+                </div>
+                
+                <div class="right_section">
+                	<h2>2</h2>
+                </div>
+                
+                
+            </div> <!-- end of right content -->
+	    </div> <!-- end of content -->
+    </div> <!-- end of content container -->
+
+	<div id="bottom_panel">
+    	<div id="bottom_section">
+
+    </div> <!-- end of bottom panel -->
+    
+    <div id="footer_panel">
+    	<div id="footer_section">
+
+        </div>
+    </div>
+    <nav id="Navlist">
+        <ul id="listul">
+
+        </ul>
+    </nav>
+</body>
+</html>
