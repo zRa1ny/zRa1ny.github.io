@@ -522,6 +522,12 @@ body,
 .depart .depart-box .box-tip > img.depart-backpage {
   width: 30%;
 }
+.youth {
+  display: block;
+}
+.youth .page-box .box-content .youth-content {
+  position: relative;
+}
 .youth .page-box .box-content .youth-content > div {
   width: 100%;
   position: relative;
@@ -530,6 +536,65 @@ body,
 .youth .page-box .box-content .youth-content > div > img {
   width: 100%;
   height: auto;
+}
+.youth .page-box .box-content .youth-content > .cliclApply {
+  position: absolute;
+  width: 18%;
+  height: auto;
+  right: 0;
+  top: 20px;
+}
+.job {
+  display: block;
+}
+.job .title-back-job {
+  float: right;
+  height: 100%;
+  width: 26%;
+  background: url(../images/back.png) no-repeat;
+  background-size: 60% 35%;
+  background-position: center center;
+}
+.job .page-box .box-content {
+  padding: .9375rem 0.8rem;
+}
+.job .page-box .box-content .jobs-unit {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+.job .page-box .box-content .jobs-unit .icon-house {
+  position: absolute;
+  width: 18%;
+  transform: translate(20%, -100%);
+}
+.job .page-box .box-content .jobs-unit .icon-house > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.job .page-box .box-content .jobs-unit .unit-name {
+  width: 25%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.job .page-box .box-content .jobs-unit .unit-name > span {
+  font-size: 0.99492vh;
+  line-height: 4.9746vh;
+  font-weight: bold;
+  border: 1px solid #00465b;
+  color: #000;
+  display: inline-block;
+  padding: 0 4px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.job .page-box .box-content .jobs-unit .unit-name > span.on {
+  background: #377ecc;
+  color: #fff;
 }
 .open .page-box .box-content .open-content > div {
   width: 100%;

@@ -22,18 +22,21 @@ function init(obj) {
     var $index = $(".index"),
         $container = $('.container'),
         ani = new AnimateControl(),
-        companyData = obj.companyData;
+        companyData = obj.companyData,
+        $jobPage = $('.job');
 
     $index.animate({
         top: "0",
         opacity: '1'
     }, function() {
-        ani.swiperAnimate();
+        ani.swiperAnimate('.index');
     })
 
     $('.cir').click(function() {
         console.log('click')
-        $('.' + $(this).attr('page')).addClass('animated zoomIn').show();
+        var pageName = $(this).attr('page');
+        $('.' + pageName).addClass('animated zoomIn').show();
+        ani.swiperAnimate('.' + pageName);
     })
 
     function hidePage() {
@@ -115,6 +118,18 @@ function init(obj) {
     })
     $('.group-deatail-back').click(function() {
         $('#group-deatail').fadeOut()
+    })
+
+    $('.cliclApply').click(function(e) {
+        $jobPage.show();
+    })
+    $('.title-back-job').click(function() {
+        $jobPage.hide();
+    })
+
+    $('.unit-name').click(function() {
+        console.log($(this).index())
+
     })
 
 
