@@ -211,6 +211,7 @@ body,
   display: flex;
   flex-direction: column;
   z-index: 1;
+  overflow: hidden;
 }
 .page .page-box .box-content .box-slogn {
   width: 100%;
@@ -374,14 +375,72 @@ body,
   overflow: hidden;
 }
 .group .page-box .box-content .group-content > .road {
-  width: 50%;
-  height: 100%;
+  width: 20vh;
+  height: 50vh;
   position: absolute;
-  left: 21%;
+  left: 30%;
 }
 .group .page-box .box-content .group-content > .road > img {
-  width: 100%;
+  width: 70%;
   height: 100%;
+}
+.group .page-box .box-content .group-content > .road #roadcar {
+  transition: all 1s;
+}
+.group .page-box .box-content .group-content > .road > .roadcar {
+  width: 4.9746vh;
+  height: 3.3164vh;
+  background: url(../images/chezi.png) no-repeat;
+  background-size: 100% 100%;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-100%, 0);
+  display: none;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c1 {
+  right: 0;
+  top: 0vh;
+  display: block;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c2 {
+  left: 63%;
+  display: block;
+  top: 7vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c3 {
+  display: block;
+  left: 48%;
+  top: 15vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c4 {
+  display: block;
+  left: 63%;
+  top: 23vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c5 {
+  right: 7%;
+  display: block;
+  top: 4vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c6 {
+  right: 25%;
+  display: block;
+  top: 13vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c7 {
+  display: block;
+  right: 19%;
+  top: 20vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c8 {
+  display: block;
+  right: 12%;
+  top: 28vh;
+}
+.group .page-box .box-content .group-content > .road > .roadcar.c9 {
+  display: block;
+  right: 47%;
+  top: 36vh;
 }
 .group .page-box .box-content .group-content > .campany {
   position: absolute;
@@ -461,6 +520,7 @@ body,
 }
 .group-deatail .page-box .group-deatail-content {
   text-align: justify;
+  font-size: 1.98984vh;
 }
 .group-deatail .page-box .group-deatail-content .c-name {
   font-weight: bold;
@@ -483,11 +543,11 @@ body,
 }
 .depart .page-box .box-content .depart-content > div > .showActive {
   position: absolute;
-  left: 50%;
+  left: 85%;
   margin-left: -35px;
-  top: 30px;
-  width: 60px;
-  height: 60px;
+  top: 11%;
+  width: 14%;
+  height: 11%;
 }
 .depart .depart-box {
   max-height: 0vh;
@@ -522,9 +582,6 @@ body,
 .depart .depart-box .box-tip > img.depart-backpage {
   width: 30%;
 }
-.youth {
-  display: block;
-}
 .youth .page-box .box-content .youth-content {
   position: relative;
 }
@@ -543,9 +600,7 @@ body,
   height: auto;
   right: 0;
   top: 20px;
-}
-.job {
-  display: block;
+  z-index: 1;
 }
 .job .title-back-job {
   float: right;
@@ -583,7 +638,7 @@ body,
 }
 .job .page-box .box-content .jobs-unit .unit-name > span {
   font-size: 0.99492vh;
-  line-height: 4.9746vh;
+  line-height: 4.1455vh;
   font-weight: bold;
   border: 1px solid #00465b;
   color: #000;
@@ -595,6 +650,39 @@ body,
 .job .page-box .box-content .jobs-unit .unit-name > span.on {
   background: #377ecc;
   color: #fff;
+}
+.job .page-box .box-content .job-content {
+  padding-top: 10px;
+}
+.job .page-box .box-content .job-content .jobs-item {
+  padding: 5px 0;
+  white-space: nowrap;
+  border-bottom: 1px dashed #000;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link > .link-left {
+  vertical-align: middle;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link > .link-left > img {
+  width: 14px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link > .link-left > span {
+  vertical-align: middle;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link > .link-left > span.label {
+  color: #369039;
+}
+.job .page-box .box-content .job-content .jobs-item .job-link > a {
+  color: #369039;
+  transform: scale(0.8);
 }
 .open .page-box .box-content .open-content > div {
   width: 100%;

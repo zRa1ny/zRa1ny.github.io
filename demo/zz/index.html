@@ -17,7 +17,8 @@
     <meta name="format-detection" content="email=no">
     <meta name="format-detection" content="address=no">
     <meta name="format-detection" content="date=no">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="css/reset.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -26,7 +27,7 @@
 
 <body>
     <!-- loding start -->
-    <!-- <div class="loading posa">
+    <div class="loading posa">
         <div class="load-content xy">
             <div class="cell">
                 <div class="progress-wrap">
@@ -43,14 +44,14 @@
                 </div>
             </div><span class="progress-num">0%</span>
         </div>
-    </div> -->
+    </div>
     <!-- loding end -->
 
     <!-- 横屏 -->
-    <!-- <div class="cover posa">
-    <div class="iphone Rotate"></div>
-    <p>为了更好的用户体验，请将屏幕竖向浏览！</p>
-  </div> -->
+    <div class="cover posa">
+        <div class="iphone Rotate"></div>
+        <p>为了更好的用户体验，请将屏幕竖向浏览！</p>
+    </div>
     <!-- 音乐 -->
     <!-- <audio preload="auto" id="myMusic" loop autoplay src="music.mp3">
   </audio>
@@ -75,7 +76,8 @@
         </div>
         <div class="bottom">
             <img class="ani" s-a-effect="scaleIn" s-a-delay="0.5s" src="./images/people.png" alt="" srcset="">
-            <img class="enter ani" s-a-effect="zoomIn" s-a-delay="1s" src="./images/enter.png" alt="" srcset="" class="enter">
+            <img class="enter ani" s-a-effect="zoomIn" s-a-delay="1s" src="./images/enter.png" alt="" srcset=""
+                class="enter">
         </div>
     </div>
     <!--  -->
@@ -93,6 +95,8 @@
             <div class="cir c-youth" page="youth"></div>
             <div class="cir c-open" page="open"></div>
             <div class="cir c-channel" page="channel"></div>
+            <!-- 小车 -->
+            <!-- <div class="car"></div> -->
         </div>
     </div>
 
@@ -105,15 +109,17 @@
             <div class="box-title"><img src="./images/box-title.png" alt="" srcset=""></div>
             <div class="box-content">
                 <div class="box-slogn">
-                    <img src="./images/box-slogn.png" alt="" srcset="">
+                    <img class="ani" s-a-effect="scaleIn" s-a-delay="0.5s" src="./images/box-slogn.png" alt=""
+                        srcset="">
                 </div>
-                <div class="box-scroll profiles-content"><img src="./images/profiles-content.png" alt="" srcset="">
+                <div class="box-scroll profiles-content"><img src="./images/profiles-content.png" alt="" srcset=""
+                        class="ani" s-a-effect="scaleIn" s-a-delay="0.8s">
                 </div>
                 <div class="cloud cloud1"><img src="./images/cloud1.png" alt="" srcset=""></div>
                 <div class="cloud cloud2"><img src="./images/cloud2.png" alt="" srcset=""></div>
                 <div class="cloud cloud3"><img src="./images/cloud3.png" alt="" srcset=""></div>
             </div>
-            <div class="box-tip"><img src="./images/grass.png" alt="" srcset=""></div>
+            <!-- <div class="box-tip"><img src="./images/grass.png" alt="" srcset=""></div> -->
         </div>
     </div>
 
@@ -130,6 +136,7 @@
                     <div class="join-1"><img src="./images/join-1.png" alt="" srcset=""></div>
                     <div class="join-2 join-2-big-show"><img src="./images/join-2.png" alt="" srcset=""></div>
                     <div class="join-3"><img src="./images/join-3.png" alt="" srcset=""></div>
+                    <div class="join-4"><img src="./images/join-4.png" alt="" srcset=""></div>
                 </div>
             </div>
             <div class="box-tip"><img src="./images/more.png" alt="" srcset=""></div>
@@ -157,7 +164,11 @@
             <div class="box-content">
                 <div class="box-slogn"><img src="./images/box-slogn.png" alt="" srcset=""></div>
                 <div class="box-scroll group-content">
-                    <div class="road"><img src="./images/road.png" alt="" srcset=""></div>
+
+                    <div class="road">
+                        <img src="./images/road.png" alt="" srcset="">
+                        <div id="roadcar" class="roadcar"></div>
+                    </div>
                     <div class="campany c1" company='c1'>正中置业集团</div>
                     <div class="campany c2" company='c2'>正中企业服务</div>
                     <div class="campany c3" company='c3'>正中新材</div>
@@ -191,7 +202,7 @@
                     <div class="group-deatail-content ">
                         <span class="c-name " id="c-name">正中新材料有限公司</span>
                         <span class="c-text" id="c-text">
-                        正中企服专注于高端写字楼、产业园区的运营管理、产业服务以及商业地产的投资和运营管理。目前公司运营管理的高端写字楼物业超过百万平米，包括科兴科学园、美国标准石油大厦在内的海内外高端物业。客户涵盖腾讯互娱、招银科技、微软研发（深圳）等高附加值企业1000余家，5万余人。
+                            正中企服专注于高端写字楼、产业园区的运营管理、产业服务以及商业地产的投资和运营管理。目前公司运营管理的高端写字楼物业超过百万平米，包括科兴科学园、美国标准石油大厦在内的海内外高端物业。客户涵盖腾讯互娱、招银科技、微软研发（深圳）等高附加值企业1000余家，5万余人。
                         </span>
                     </div>
                 </div>
@@ -297,7 +308,8 @@
             <div class="box-content ">
                 <div class="box-slogn "><img src="./images/box-slogn.png " alt=" " srcset=" "></div>
                 <div class="box-scroll youth-content ">
-                    <div class="cliclApply ani" s-a-effect="lightSpeedIn" s-a-delay="0.5s"><img src="./images/cliclApply.png" alt="" sizes="" srcset=""></div>
+                    <div class="cliclApply ani" s-a-effect="lightSpeedIn" s-a-delay="0.5s"><img
+                            src="./images/cliclApply.png" alt="" sizes="" srcset=""></div>
                     <div class="youth-1 "><img src="./images/youth-1.png " alt=" " srcset=" ">
                     </div>
                 </div>
@@ -328,12 +340,79 @@
                 <div class="box-scroll job-content ">
                     <div class="jobs-item">
                         <div class="job-link">
-                            <div class="link-left">
-                                <img src="./images/icon1.png" alt="" srcset="">
-                                <span class="label">职位：</span>
-                                <span class="text"></span>
-                            </div>
-                            <a href="">立即申请》</a>
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
+                        </div>
+                    </div>
+                    <div class="jobs-item">
+                        <div class="job-link">
+                            <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span
+                                    class="label">职位：</span> <span class="text">建筑工程造价类</span> </div> <a
+                                href="">立即申请》</a>
                         </div>
                     </div>
                 </div>
@@ -372,7 +451,8 @@
                 <div class="box-scroll channel-content ">
                     <div class="channel-1 "><img src="./images/channel-1.png " alt=" " srcset=" ">
                     </div>
-                    <div class="link "> <a href=" http://campus.51job.com/genzon "> http://campus.51job.com/genzon</a></div>
+                    <div class="link "> <a href=" http://campus.51job.com/genzon "> http://campus.51job.com/genzon</a>
+                    </div>
                     <div class="code ">
                         <div>
                             <div><img src="./images/ydcode.jpg " alt=" " srcset=" "></div>

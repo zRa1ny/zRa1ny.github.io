@@ -167,6 +167,8 @@ body,
             }
         }
 
+        .car {}
+
 
     }
 }
@@ -256,6 +258,7 @@ body,
             display: flex;
             flex-direction: column;
             z-index: 1;
+            overflow: hidden;
 
             .box-slogn {
                 width: 100%;
@@ -479,15 +482,88 @@ body,
                 position: relative;
                 overflow: hidden;
 
+
+
                 >.road {
-                    width: 50%;
-                    height: 100%;
+                    width: 20vh;
+                    height: 50vh;
                     position: absolute;
-                    left: 21%;
+                    left: 30%;
 
                     >img {
-                        width: 100%;
+                        width: 70%;
                         height: 100%;
+                    }
+
+                    #roadcar {
+                        transition: all 1s;
+                    }
+
+                    >.roadcar {
+                        width: 60*@pxToVh;
+                        height: 40*@pxToVh;
+                        background: url(../images/chezi.png) no-repeat;
+                        background-size: 100% 100%;
+                        position: absolute;
+                        z-index: 1;
+                        transform: translate(-100%, 0);
+                        display: none;
+
+                        &.c1 {
+                            right: 0;
+                            top: 0vh;
+                            display: block;
+
+                        }
+
+
+                        &.c2 {
+                            left: 63%;
+                            display: block;
+                            top: 7vh;
+                        }
+
+                        &.c3 {
+                            display: block;
+                            left: 48%;
+                            top: 15vh;
+                        }
+
+                        &.c4 {
+                            display: block;
+                            left: 63%;
+                            top: 23vh;
+                        }
+
+                        &.c5 {
+                            right: 7%;
+                            display: block;
+                            top: 4vh;
+                        }
+
+                        &.c6 {
+                            right: 25%;
+                            display: block;
+                            top: 13vh;
+                        }
+
+                        &.c7 {
+                            display: block;
+                            right: 19%;
+                            top: 20vh;
+                        }
+
+                        &.c8 {
+                            display: block;
+                            right: 12%;
+                            top: 28vh;
+                        }
+
+                        &.c9 {
+                            display: block;
+                            right: 47%;
+                            top: 36vh;
+                        }
                     }
                 }
 
@@ -599,6 +675,7 @@ body,
 
         .group-deatail-content {
             text-align: justify;
+            font-size: 1.98984vh;
 
             .c-name {
                 font-weight: bold;
@@ -646,11 +723,11 @@ body,
 
                     >.showActive {
                         position: absolute;
-                        left: 50%;
+                        left: 85%;
                         margin-left: -35px;
-                        top: 30px;
-                        width: 60px;
-                        height: 60px;
+                        top: 11%;
+                        width: 14%;
+                        height: 11%;
                         // background: #000;
                     }
                 }
@@ -702,7 +779,7 @@ body,
 }
 
 .youth {
-    display: block;
+    // display: block;
 
     .page-box {
         .box-content {
@@ -726,6 +803,7 @@ body,
                     height: auto;
                     right: 0;
                     top: 20px;
+                    z-index: 1;
                 }
             }
         }
@@ -733,7 +811,7 @@ body,
 }
 
 .job {
-    display: block;
+    // display: block;
 
     .title-back-job {
         float: right;
@@ -748,7 +826,7 @@ body,
     .page-box {
         .box-content {
             padding: .9375rem 0.8rem;
-            
+
             .jobs-unit {
                 position: relative;
                 display: flex;
@@ -756,17 +834,19 @@ body,
                 flex-wrap: wrap;
                 align-items: flex-start;
                 margin-top: 10px;
-               
+
                 .icon-house {
                     position: absolute;
                     width: 18%;
-                    transform: translate(20%,-100%);
-                    >img{
+                    transform: translate(20%, -100%);
+
+                    >img {
                         width: 100%;
                         height: auto;
                         display: block;
                     }
                 }
+
                 .unit-name {
                     width: 25%;
                     text-align: center;
@@ -774,7 +854,7 @@ body,
 
                     >span {
                         font-size: 12*@pxToVh;
-                        line-height: 60*@pxToVh;
+                        line-height: 50*@pxToVh;
                         font-weight: bold;
                         border: 1px solid #00465b;
                         color: #000;
@@ -792,7 +872,46 @@ body,
                 }
             }
 
-            .job-content {}
+            .job-content {
+                padding-top: 10px;
+
+                .jobs-item {
+                    padding: 5px 0;
+                    white-space: nowrap;
+                    border-bottom: 1px dashed #000;
+
+                    .job-link {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        font-size: 12px;
+
+                        >.link-left {
+                            vertical-align: middle;
+
+                            >img {
+                                width: 14px;
+                                height: auto;
+                                vertical-align: middle;
+                                margin-right: 5px;
+                            }
+
+                            >span {
+                                vertical-align: middle;
+
+                                &.label {
+                                    color: #369039;
+                                }
+                            }
+                        }
+
+                        >a {
+                            color: #369039;
+                            transform: scale(.8);
+                        }
+                    }
+                }
+            }
         }
     }
 }
