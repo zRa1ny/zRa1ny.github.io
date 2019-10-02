@@ -58,6 +58,7 @@ body,
   position: relative;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
+  top: -100vh;
 }
 .container .content {
   width: 163vh;
@@ -257,7 +258,6 @@ body,
   justify-content: space-between;
   align-items: center;
   top: -100vh;
-  display: none;
 }
 .index > div img {
   width: 100%;
@@ -613,6 +613,9 @@ body,
 .job .page-box .box-content {
   padding: .9375rem 0.8rem;
 }
+.job .page-box .box-content .jobs-col {
+  display: none;
+}
 .job .page-box .box-content .jobs-unit {
   position: relative;
   display: flex;
@@ -637,7 +640,7 @@ body,
   margin-bottom: 5px;
 }
 .job .page-box .box-content .jobs-unit .unit-name > span {
-  font-size: 0.99492vh;
+  font-size: 14px;
   line-height: 4.1455vh;
   font-weight: bold;
   border: 1px solid #00465b;
@@ -647,7 +650,7 @@ body,
   border-radius: 3px;
   white-space: nowrap;
 }
-.job .page-box .box-content .jobs-unit .unit-name > span.on {
+.job .page-box .box-content .jobs-unit .unit-name.on > span {
   background: #377ecc;
   color: #fff;
 }

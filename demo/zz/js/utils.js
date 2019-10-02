@@ -90,7 +90,7 @@ var Car = (function () {
         }, 2000)
     }
     car.prototype.creatCar = function () {
-        this.$car = $('<div style="position:absolute;background:url(' + this.config.src + ') no-repeat;background-size:100% 100%;width:' + this.config.width * pxToVh + 'vh;height:' + this.config.height * pxToVh + 'vh;transition:all 2s linear;transform:rotateY(-180deg)"></div>');
+        this.$car = $('<div style="position:absolute;background:url(' + this.config.src + ') no-repeat;background-size:100% 100%;left:' + (pos[0].x - road - this.config.width / 2) * pxToVh + 'vh;top: (pos[0].y - road - this.config.height / 2) * pxToVh ;width:' + this.config.width * pxToVh + 'vh;height:' + this.config.height * pxToVh + 'vh;transition:all 2s linear;transform:rotateY(-180deg)"></div>');
         this.$car.appendTo($('.container .content'));
     }
     car.prototype.move = function (pos) {

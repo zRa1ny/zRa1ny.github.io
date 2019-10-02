@@ -133,9 +133,13 @@ function init (obj) {
     })
 
     $('.unit-name').click(function () {
-        console.log($(this).index())
-
+        $(this).addClass('on').siblings().removeClass('on');
+        $('.jobs-col').eq($(this).index()).show().siblings().hide();
     })
+
+    $('.jobs-col').eq(0).show().siblings().hide();
+
+
 
 
 }

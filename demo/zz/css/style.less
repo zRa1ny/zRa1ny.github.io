@@ -79,7 +79,7 @@ body,
     position: relative;
     -webkit-overflow-scrolling: touch;
     z-index: 0;
-    // top: -100vh;
+    top: -100vh;
 
     .content {
         width: 163vh;
@@ -313,7 +313,7 @@ body,
     justify-content: space-between;
     align-items: center;
     top: -100vh;
-    display: none;
+    // display: none;
 
     >div {
         img {
@@ -827,6 +827,10 @@ body,
         .box-content {
             padding: .9375rem 0.8rem;
 
+            .jobs-col {
+                display: none;
+            }
+
             .jobs-unit {
                 position: relative;
                 display: flex;
@@ -852,8 +856,10 @@ body,
                     text-align: center;
                     margin-bottom: 5px;
 
+
+
                     >span {
-                        font-size: 12*@pxToVh;
+                        font-size: 14px;
                         line-height: 50*@pxToVh;
                         font-weight: bold;
                         border: 1px solid #00465b;
@@ -863,11 +869,15 @@ body,
                         border-radius: 3px;
                         white-space: nowrap;
 
-                        &.on {
+
+                    }
+
+                    &.on {
+                        >span {
                             background: #377ecc;
                             color: #fff;
-
                         }
+
                     }
                 }
             }
