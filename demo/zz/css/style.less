@@ -293,6 +293,12 @@ body,
                 display: block;
                 margin: 0 .46875rem 0 auto;
             }
+
+            &.lookDetail{
+                >img {
+                    width: 30%;
+                }
+            }
         }
     }
 }
@@ -397,6 +403,7 @@ body,
                 bottom: 0;
                 width: 20%;
             }
+
         }
 
         .cloud {
@@ -730,7 +737,8 @@ body,
                         height: 10vw;
                         // transform: translate(-100%, 0);
                         // animation: zhuan 3s infinite;
-                        box-shadow: 0 0 20px 0px #268c8e;
+                        // box-shadow: 0 0 20px 0px #268c8e;
+                        animation:shadowRange 5s infinite;
                         border-radius: 50%;
                     }
                 }
@@ -1138,5 +1146,14 @@ body,
     100% {
         transform: scale(0.1);
         opacity: 0.1;
+    }
+}
+
+@keyframes shadowRange{
+    0%{
+        box-shadow: 0 0 0px 0px #268c8e;
+    }
+    100%{
+        box-shadow: 0 0 30px 0px #268c8e; 
     }
 }
