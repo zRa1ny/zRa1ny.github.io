@@ -243,7 +243,7 @@ body,
   margin: 0 .46875rem 0 auto;
 }
 .page .page-box .box-tip.lookDetail > img {
-  width: 30%;
+  width: 40%;
 }
 .index {
   position: absolute;
@@ -375,11 +375,10 @@ body,
 .group .page-box .box-content .group-content {
   margin-top: 20px;
   position: relative;
-  overflow: hidden;
 }
 .group .page-box .box-content .group-content > .road {
   width: 20vh;
-  height: 50vh;
+  height: 45vh;
   position: absolute;
   left: 30%;
 }
