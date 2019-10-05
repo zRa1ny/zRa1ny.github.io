@@ -294,7 +294,7 @@ body,
                 margin: 0 .46875rem 0 auto;
             }
 
-            &.lookDetail{
+            &.lookDetail {
                 >img {
                     width: 40%;
                 }
@@ -483,19 +483,19 @@ body,
         transition: max-height 1s;
 
         .box-content {
+            align-items: center;
 
             .group-content {
                 margin-top: 20px;
                 position: relative;
                 // overflow: hidden;
-
-
+                width: 110%;
 
                 >.road {
                     width: 20vh;
                     height: 45vh;
                     position: absolute;
-                    left: 30%;
+                    left: 25%;
 
                     >img {
                         width: 70%;
@@ -517,7 +517,7 @@ body,
                         display: none;
 
                         &.c1 {
-                            right: 0;
+                            right: 3%;
                             top: 0vh;
                             display: block;
 
@@ -525,20 +525,20 @@ body,
 
 
                         &.c2 {
-                            left: 63%;
+                            right:14%;
                             display: block;
                             top: 7vh;
                         }
 
                         &.c3 {
                             display: block;
-                            left: 48%;
+                            right: 25%;
                             top: 15vh;
                         }
 
                         &.c4 {
                             display: block;
-                            left: 63%;
+                            right: 9%;
                             top: 23vh;
                         }
 
@@ -556,13 +556,13 @@ body,
 
                         &.c7 {
                             display: block;
-                            right: 19%;
+                            right: 13%;
                             top: 20vh;
                         }
 
                         &.c8 {
                             display: block;
-                            right: 12%;
+                            right: 26%;
                             top: 28vh;
                         }
 
@@ -715,8 +715,8 @@ body,
     // display: block;
 
     .page-box {
-        transition: max-height 1s;
-        max-height: 100vh;
+        // transition: max-height 1s;
+        // max-height: 100vh;
 
         .box-content {
             .depart-content {
@@ -738,7 +738,7 @@ body,
                         // transform: translate(-100%, 0);
                         // animation: zhuan 3s infinite;
                         // box-shadow: 0 0 20px 0px #268c8e;
-                        animation:shadowRange 5s infinite;
+                        animation: shadowRange 5s infinite;
                         border-radius: 50%;
                     }
                 }
@@ -747,7 +747,8 @@ body,
     }
 
     .depart-box {
-        max-height: 0vh;
+        // max-height: 0vh;
+        // display: none;
 
         .box-content {
             .depart-content {
@@ -1149,11 +1150,12 @@ body,
     }
 }
 
-@keyframes shadowRange{
-    0%{
+@keyframes shadowRange {
+    0% {
         box-shadow: 0 0 0px 0px #268c8e;
     }
-    100%{
-        box-shadow: 0 0 30px 0px #268c8e; 
+
+    100% {
+        box-shadow: 0 0 30px 0px #268c8e;
     }
 }

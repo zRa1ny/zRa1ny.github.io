@@ -70,7 +70,7 @@ var companyData = {
 // job6.split('、').forEach(function(item) {
 //     str += `<div class="jobs-item">
 //     <div class="job-link">
-//         <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span class="label">职位：</span> <span class="text">${item}</span> </div> <a href="#">立即申请》</a>
+//         <div class="link-left"> <img src="./images/icon1.png" alt="" srcset=""><span class="label">职位：</span> <span class="text">${item}</span> </div> <a href="https://genzon.zhiye.com/promotion/HM20190926">立即申请》</a>
 //     </div>
 // </div>`
 // })
