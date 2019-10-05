@@ -249,9 +249,12 @@ function setRem(fz, doc, win) {
 
 
 function LazyLoadImg(select) {
+    console.log('loadimg')
     this.$doms = $(select);
     this.$doms.each(function(idx, val) {
         var $val = $(val);
-        $val.attr('src', $val.attr('data-src'));
+        if ($val.attr('src') == '') {
+            $val.attr('src', $val.attr('data-src'));
+        }
     })
 }
