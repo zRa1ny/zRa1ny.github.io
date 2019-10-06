@@ -78,7 +78,7 @@ var Car = (function() {
         // })
 
 
-        setInterval(() => {
+        setInterval(function() {
             if (_this.curIdx >= pos.length) {
                 pos.reverse().forEach(function(p) {
                     p.dir = -p.dir
