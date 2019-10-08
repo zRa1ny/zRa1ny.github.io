@@ -151,8 +151,13 @@ a {
     star: expression(this.onFocus=this.blur())
 }
 
+@font-face {
+    font-family: SourceHanSansCN;
+    src: url('./SourceHanSansCN-Medium.otf');
+}
+
 body {
-    font-family: "microsoft yahei", Regular
+    font-family: "SourceHanSansCN", "microsoft yahei", Regular
 }
 
 .cover {
