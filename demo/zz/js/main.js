@@ -140,7 +140,7 @@ function init (obj) {
 
     $('.jobs-col').eq(0).show().siblings().hide();
 
-    document.addEventListener("WeixinJSBridgeReady", function () { playmusic.play(); }, false);// Apple wx play music; 
+    document.addEventListener("WeixinJSBridgeReady", function () { playmusic.changeClass('#music', 'myMusic'); }, false);// Apple wx play music; 
     $('.audio').click(function () {
         playmusic.changeClass('#music', 'myMusic')
     })

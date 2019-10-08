@@ -1,4 +1,8 @@
 @charset "utf-8";
+.audio input {
+  outline: none;
+  border: none;
+}
 /* ----------------
 	less配置开始
 ----------------- */
