@@ -4,7 +4,7 @@
 //第一时间执行，不能放置到windown.onload中
 setRem(28, document, window);
 window.isReady = true;
-setLoadAni(function() {
+setLoadAni(function () {
     if (window.isReady) {
         window.isReady = false;
         init({
@@ -18,7 +18,7 @@ setLoadAni(function() {
 // });
 
 
-function init(obj) {
+function init (obj) {
     var $index = $(".index"),
         $container = $('.container'),
         ani = new AnimateControl(),
@@ -31,13 +31,13 @@ function init(obj) {
     $index.animate({
         top: "0",
         opacity: '1'
-    }, function() {
+    }, function () {
         ani.swiperAnimate('.index');
     })
 
 
 
-    $('.cir').click(function() {
+    $('.cir').click(function () {
         console.log('click')
         var pageName = $(this).attr('page');
         $('.' + pageName).addClass('animated zoomIn').show();
@@ -47,14 +47,14 @@ function init(obj) {
         }
     })
 
-    function hidePage() {
+    function hidePage () {
         console.log(this)
         $(this).removeClass('animated scaleOut').hide();
         $(this).off('animationend', hidePage);
         $(this).off('webkitAnimationEnd', hidePage);
     }
 
-    $('.title-back').click(function() {
+    $('.title-back').click(function () {
         var $page = $(this).parents('.page');
         $page.removeClass('zoomIn').addClass('scaleOut');
         $page.on('webkitAnimationEnd', hidePage)
@@ -62,23 +62,23 @@ function init(obj) {
     })
 
 
-    $(".enter").click(function(e) {
+    $(".enter").click(function (e) {
         e.stopPropagation();
         // $container.fadeIn()
         $index.animate({
             top: "-100vh",
             opacity: '0'
-        }, function() {
+        }, function () {
             $container.animate({
                 top: "0",
                 opacity: '1'
-            }, function() {})
+            }, function () { })
 
         })
 
     })
 
-    $('.join-2-big-show').click(function() {
+    $('.join-2-big-show').click(function () {
         $('.join .small-join').css({
             "max-height": "0"
         });
@@ -87,7 +87,7 @@ function init(obj) {
         });
     })
 
-    $('.join-backpage').click(function() {
+    $('.join-backpage').click(function () {
 
         $('.join .small-join').css({
             "max-height": "100vh"
@@ -97,21 +97,21 @@ function init(obj) {
         });
     })
 
-    $('.showActive').click(function() {
+    $('.showActive').click(function () {
 
         $('.depart .nomral-box').slideUp();
         $('.depart .depart-box').slideDown();
 
     })
 
-    $('.depart-backpage').click(function() {
+    $('.depart-backpage').click(function () {
         $('.depart .depart-box').slideUp();
         $('.depart .nomral-box').slideDown();
 
     })
 
 
-    $('.group .campany').click(function(e) {
+    $('.group .campany').click(function (e) {
         var curData = companyData[$(this).attr('company')];
         $(this).addClass('active').siblings().removeClass('active');
         $('#roadcar').removeClass('c1 c2 c3 c4 c5 c6 c7 c8 c9').addClass($(this).attr('company'));
@@ -121,25 +121,32 @@ function init(obj) {
         $('#c-text').text(curData.content)
         $('#group-deatail').fadeIn();
     })
-    $('.group-deatail-back').click(function() {
+    $('.group-deatail-back').click(function () {
         $('#group-deatail').fadeOut()
     })
 
-    $('.cliclApply').click(function(e) {
+    $('.cliclApply').click(function (e) {
         console.log("show")
         $jobPage.show();
     })
-    $('.title-back-job').click(function() {
+    $('.title-back-job').click(function () {
         $jobPage.hide();
     })
 
-    $('.unit-name').click(function() {
+    $('.unit-name').click(function () {
         $(this).addClass('on').siblings().removeClass('on');
         $('.jobs-col').eq($(this).index()).show().siblings().hide();
     })
 
     $('.jobs-col').eq(0).show().siblings().hide();
 
+    document.addEventListener("WeixinJSBridgeReady", function () { playmusic.changeClass('#music', 'myMusic'); }, false);// Apple wx play music; 
+    $('.audio').click(function () {
+        playmusic.changeClass('#music', 'myMusic')
+    })
+    $(document).one("click", function () {
+        playmusic.changeClass('#music', 'myMusic')
+    })
 
 
 
