@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-group {
+            width: 40% !important;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<!-- （原来价格*（旧汇率-新汇率））/新汇率*减少的百分点+原来价格 -->
+
+<body>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div>价格单位（美元），汇率（人民币/美元）</div>
+            <div>新价格 = 让利百分比 * (原价格 * (原汇率 - 新汇率) / 新汇率) + 原价格 </div>
+        </div>
+        <div class="panel-body">
+            <div class="form-inline">
+                <div class="form-group">
+                    <label for="oldPrice">原价格：</label>
+                    <input type="text" class="form-control" id="oldPrice" placeholder="请输入美元价格"
+                        onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false" />
+                </div>
+                <div class="form-group">
+                    <label for="oldRate">原汇率：</label>
+                    <input type="text" class="form-control" id="oldRate" placeholder="请输入0.1的比例"
+                        onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
+                </div>
+                <div class="form-group">
+                    <label for="newRate">新汇率：</label>
+                    <input type="text" class="form-control" id="newRate" placeholder="请输入0.1的比例"
+                        onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="newPrice">新价格：</label>
+                    <input type="text" class="form-control" id="newPrice" placeholder="">
+                </div> -->
+
+                <div class="form-group">
+                    <label for="count">让利百分比：</label>
+                    <input type="text" class="form-control" id="count" placeholder="请输入0.1的比例"
+                        onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
+                </div>
+
+                <button type="submit" class="btn btn-primary" onclick="calcResult()">计算结果</button>
+            </div>
+        </div>
+    </div>
+
+    <ul class="list-group" id="result">
+    </ul>
+
+
+
+    <script>
+        // document.getElementById("oldRate").value = 6.3;
+        // document.getElementById("newRate").value = 7.0961;
+        // document.getElementById("oldPrice").value = 660;
+        // document.getElementById("count").value = 0.6;
+
+        // calcResult();
+        function calcResult() {
+            var oldRate = Number(document.getElementById("oldRate").value);
+            var newRate = Number(document.getElementById("newRate").value);
+            var oldPrice = Number(document.getElementById("oldPrice").value);
+            var count = Number(document.getElementById("count").value);
+            if (oldRate == "" && newRate == "" && oldPrice == "" && count == "") {
+                alert("请填写完成后计算");
+                return;
+            }
+            var newPrice = count * (oldPrice * (oldRate - newRate) / newRate) + oldPrice;
+            console.log(newPrice)
+            var changePrice = newPrice - oldPrice;
+            var oldchangePrice = newPrice * newRate - oldPrice * oldRate;
+
+            // console.log(oldPrice * (newRate - oldRate) * 0.6 / newRate)
+
+            var str = '<li class="list-group-item">新价格：' + newPrice + '美元，相对于原始价格' + oldPrice + '美元，' + (changePrice > 0 ? ("增加了" + Math.abs(changePrice)) : ("减少了" + Math.abs(changePrice))) + '美元。</li>';
+            str += '<li class="list-group-item">新价格：' + newPrice * newRate + '元，相对于原始价格' + oldPrice * oldRate + '元，' + (oldchangePrice > 0 ? ("增加了" + Math.abs(oldchangePrice)) : ("减少了" + Math.abs(oldchangePrice))) + '元。</li>';
+            document.getElementById("result").innerHTML = str;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
