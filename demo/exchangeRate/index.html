@@ -3,14 +3,46 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=false">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://cdn.bootcss.com/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .form-group {
-            width: 40% !important;
-            margin: 10px 0;
+        html,
+        body {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .form-inline {
+                font-size: 0;
+            }
+
+            .form-group {
+                width: 50% !important;
+                margin: 10px 0;
+                /* display: flex !important; */
+                /* align-items: center; */
+            }
+
+            .form-group label {
+                flex-basis: 6em;
+                font-size: 14px;
+                vertical-align: middle;
+            }
+
+            .form-group input {
+                vertical-align: middle;
+
+            }
+
+            #result {
+                text-align: justify;
+                white-space: normal;
+                word-break: break-all;
+            }
         }
     </style>
 </head>
@@ -32,12 +64,12 @@
                 </div>
                 <div class="form-group">
                     <label for="oldRate">原汇率：</label>
-                    <input type="text" class="form-control" id="oldRate" placeholder="请输入0.1的比例"
+                    <input type="text" class="form-control" id="oldRate" placeholder="请输入小数形式的比例（0.1）"
                         onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
                 </div>
                 <div class="form-group">
                     <label for="newRate">新汇率：</label>
-                    <input type="text" class="form-control" id="newRate" placeholder="请输入0.1的比例"
+                    <input type="text" class="form-control" id="newRate" placeholder="请输入小数形式的比例（0.1）"
                         onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
                 </div>
 
@@ -48,7 +80,7 @@
 
                 <div class="form-group">
                     <label for="count">让利百分比：</label>
-                    <input type="text" class="form-control" id="count" placeholder="请输入0.1的比例"
+                    <input type="text" class="form-control" id="count" placeholder="请输入小数形式的比例（0.1）"
                         onKeyPress="if (event.keyCode!=46 && event.keyCode!=45 && event.keyCode<48 || event.keyCode>57) event.returnValue=false">
                 </div>
 
@@ -85,10 +117,23 @@
 
             // console.log(oldPrice * (newRate - oldRate) * 0.6 / newRate)
 
-            var str = '<li class="list-group-item">新价格：' + newPrice + '美元，相对于原始价格' + oldPrice + '美元，' + (changePrice > 0 ? ("增加了" + Math.abs(changePrice)) : ("减少了" + Math.abs(changePrice))) + '美元。</li>';
-            str += '<li class="list-group-item">新价格：' + newPrice * newRate + '元，相对于原始价格' + oldPrice * oldRate + '元，' + (oldchangePrice > 0 ? ("增加了" + Math.abs(oldchangePrice)) : ("减少了" + Math.abs(oldchangePrice))) + '元。</li>';
+            var str = '<li class="list-group-item">新价格（美元）：' + newPrice + '美元，相对于原始价格' + oldPrice + '美元，' + (changePrice > 0 ? ("增加了" + Math.abs(changePrice)) : ("减少了" + Math.abs(changePrice))) + '美元。</li>';
+            str += '<li class="list-group-item">新价格（人民币）：' + newPrice * newRate + '元，相对于原始价格' + oldPrice * oldRate + '元，' + (oldchangePrice > 0 ? ("增加了" + Math.abs(oldchangePrice)) : ("减少了" + Math.abs(oldchangePrice))) + '元。</li>';
             document.getElementById("result").innerHTML = str;
         }
+
+
+        var timer;
+        Array.prototype.forEach.call(document.getElementsByTagName('input'), function (el) {
+            el.onblur = function () {
+                timer = setTimeout(() => {
+                    document.body.scrollTop = 0;
+                }, 100);
+            }
+            el.onfocus = function () {
+                if (timer) clearTimeout(timer);
+            }
+        })
 
 
 
