@@ -207,7 +207,8 @@
             <p>服务热线：</p>
             <p class="phone">18866250299</p>
             <p>地址：青岛市黄岛区铁山工业园背儿山路5187号</p>
-            <div class="u-bot-copyright">Copyright ©2018 - <script language="JavaScript">
+            <div class="u-bot-copyright">Copyright ©2018 -
+                <script language="JavaScript">
                     var nowD = new Date();
                     var year = nowD.getFullYear();
                     document.write(year);
@@ -217,7 +218,12 @@
     </div>
     <script src="./js/jquery-1.11.1.min.js"></script>
 
-
+    <script>
+        $('input').blur(function () {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
+    </script>
 </body>
 
 </html>

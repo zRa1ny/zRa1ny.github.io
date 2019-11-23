@@ -286,6 +286,12 @@
                 uploadImg($('#previewer'), imgBox)
             });
 
+
+            $('input').blur(function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            })
+
             function uploadImg(element, tag) {
                 var files = tag.files;
                 element.html("");

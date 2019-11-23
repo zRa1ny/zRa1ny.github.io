@@ -278,6 +278,9 @@ img {
 .index-page > .page-body {
   padding-top: 0;
 }
+.index-page > .page-body .banner {
+  background: #161616;
+}
 .index-page > .page-body .banner .swiper-pagination-bullet {
   width: 1.625rem;
   height: .125rem;

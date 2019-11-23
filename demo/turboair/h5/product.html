@@ -68,7 +68,7 @@
                     <div class="swiper-button-next"></div>
                 </div>
 
-                <div class="navs">
+                <div class="navs" id="swiper-navs">
                     <div class="active"><img src="./images/img-s1.png" alt="" srcset=""></div>
                     <div><img src="./images/img-s2.png" alt="" srcset=""></div>
                     <div><img src="./images/img-s3.png" alt="" srcset=""></div>
@@ -150,7 +150,8 @@
             <p>服务热线：</p>
             <p class="phone">18866250299</p>
             <p>地址：青岛市黄岛区铁山工业园背儿山路5187号</p>
-            <div class="u-bot-copyright">Copyright ©2018 - <script language="JavaScript">
+            <div class="u-bot-copyright">Copyright ©2018 -
+                <script language="JavaScript">
                     var nowD = new Date();
                     var year = nowD.getFullYear();
                     document.write(year);
@@ -169,6 +170,11 @@
                 $('.navs>div').eq(swiper.activeIndex).addClass('active').siblings().removeClass("active")
             }
         })
+        $('#swiper-navs>div').click(function () {
+            $(this).addClass('active').siblings().removeClass("active");
+            mySwiper.slideTo($(this).index())
+        })
+
     </script>
 
 </body>
