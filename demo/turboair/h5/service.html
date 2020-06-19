@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 制作人信息 -->
+    <!--PM:[xxx] Designer:[xxx] Developer:[] date:2018xxxx-->
+    <title>XXX</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="pragma" content="no-cach">
+    <meta name="robots" content="all">
+    <meta http-equiv="x-rim-auto-match" content="none">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="date=no">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="loading" id="loading">
+        <div class="loadbox">
+            <div class="loadtext">loading</div>
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+        </div>
+    </div>
+
+    <div class="page-L public-page service-page">
+        <div class="page-header clearfix">
+            <div class="back"><img src="./images/back.png" alt="" srcset=""></div>
+            <div class="logo"><img src="./images/logo.png" alt="" srcset=""></div>
+            <div class="menu"><img src="./images/gray-menu.png" alt="" srcset=""></div>
+            <div class="search"><a href="./search.html"><img src="./images/gray-search.png" alt="" srcset=""></a></div>
+            <div class="menus">
+                <div class="shade">
+                    <div class="navs">
+                        <a href="./index.html">首页</a>
+                        <a href="./list.html">产品中心</a>
+                        <a href="./service.html" class="active">服务中心</a>
+                        <a href="./contact.html">联系我们</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-body">
+            <div class="img-wrap"><img src="./images/service.jpg" alt="" srcset=""></div>
+            <h3>特博尔售后维护服务</h3>
+            <div class="main-box">
+                <p>尊敬的用户您好！</p>
+                <p>请登记信息，我们第一时间安排工程师为您排忧解难！</p>
+                <p class="last">请保持电话畅通！</p>
+                <form action="" id="m-form">
+                    <div class=" m25">
+                        <div>
+                            <label>
+                                <span class="label require">联系人</span>
+                                <input type="text" placeholder="请输入 . . ." class="underline-input" datatype="*">
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="m25">
+                        <div>
+                            <label>
+                                <span class="label require">联系方式</span>
+                                <input type="text" class="underline-input" placeholder="+86" datatype="m">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="m25">
+                        <span class="label require">联系地址</span>
+                        <div class="col-3">
+                            <div> <select name="" id="province" class="underline-input" datatype="*"></select></div>
+                            <div> <select name="" id="city" class="underline-input" datatype="*"></select></div>
+                            <div> <select name="" id="town" class="underline-input" datatype="*"></select></div>
+                        </div>
+                        <div class="wxalocation">获取微信地理位置，自动定位</div>
+                    </div>
+
+                    <div class="m25">
+                        <label>
+                            <span class="label require">详细地址</span>
+                            <input type="text" class="underline-input" datatype="*">
+                        </label>
+                    </div>
+
+                    <div class="m25 ">
+                        <span class="label ">外观照片上传</span>
+                        <div class="file-wrap">
+                            <div id="previewer">
+
+                            </div>
+                            <label class="file-label"><input type="file" id="file"
+                                    accept="image/png,image/gif,image/jpg,image/jpeg" multiple="multiple"></label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="m25">
+                        <span class="label ">购买日期</span>
+                        <div>
+                            <div> <input type="text" id="date-input" class="underline-input"></div>
+                        </div>
+                    </div>
+
+                    <div class="m25">
+                        <span class="label ">产品序号</span>
+                        <div>
+                            <input type="text" class="underline-input">
+                        </div>
+                        <div class="xuliehao">（序列号记载在设备铭牌上，请填写序列号或上传铭牌照片）</div>
+
+                    </div>
+
+                    <div class="tips">
+                        <div class="xuliehao"> 您可以在以下部位（红色标识） 找到设备铭牌。
+                        </div>
+                        <div class="clearfix">
+                            <img src="./images/index3-1.png" alt="" srcset="">
+                            <img src="./images/index3-1.png" alt="" srcset="">
+                            <img src="./images/index3-1.png" alt="" srcset="">
+                        </div>
+
+
+                    </div>
+
+                    <div class="m25">
+                        <span class="label ">故障描述</span>
+                        <input type="text" class="underline-input">
+                    </div>
+
+                    <div class="m25">
+                        <span class="label ">其他</span>
+                        <input type="text" class="underline-input">
+                    </div>
+                    <div class="m25">
+                        <span class="label ">故障代码</span>
+                        <input type="text" class="underline-input">
+                    </div>
+                    <div class="m25">
+                        <span class="label ">备注</span>
+                        <input type="text" class="underline-input">
+                    </div>
+
+                    <div class="m25 text-center">
+                        <button class="submit">提&nbsp;&nbsp;&nbsp;&nbsp;交</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="page-footer">
+            <p>服务热线：</p>
+            <p class="phone">18866250299</p>
+            <p>地址：青岛市黄岛区铁山工业园背儿山路5187号</p>
+            <div class="u-bot-copyright">Copyright ©2018 - <script language="JavaScript">
+                    var nowD = new Date();
+                    var year = nowD.getFullYear();
+                    document.write(year);
+                </script> 粤ICP备09063742号-1犀牛云提供企业云服务
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.11.1.min.js"></script>
+    <script src="./js/bootstrap-datetimepicker.min.js"></script>
+    <script src="./js/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script src="./js/Validform_v5.3.2_min.js"></script>
+    <script src="./js/city.js"></script>
+    <script>
+        $(function () {
+
+            $('#date-input').datetimepicker({
+                language: "zh-CN", //汉化
+                todayBtn: "true", //显示今天按钮
+                format: 'yyyy-mm-dd',
+                autoclose: true, //选择日期后自动关闭日期选择框
+                todayHighlight: true, //当天高亮显示
+                minView: "month", //不显示时分秒
+            });
+
+            $("#m-form").Validform({
+                tiptype: 3,
+                btnSubmit: ".submit",
+                showAllError: true,
+                ignoreHidden: true
+            });
+
+
+            init(ori_data, 'name', 'code');
+
+            function init(ori_data, name, value) {
+                var $province = $('#province'),
+                    $city = $('#city'),
+                    $town = $('#town');
+                resetSlect($province);
+                resetSlect($city);
+                resetSlect($town);
+                var opts = getOptsArr(ori_data);
+                $province.append(createOpts(opts.provinces, name, value)); //初始化 市级选择 这项固定显示
+                $province.change(function (e) {
+                    var code = $(this).val();
+                    resetSlect($city);
+                    resetSlect($town);
+                    opts.provinces.every(function (province) {
+                        if (province[value] === code) {
+                            $city.append(createOpts(province.city, name, value));
+                            return false;
+                        }
+                        return true;
+                    })
+
+
+                })
+
+                $city.change(function (e) {
+                    var code = $(this).val();
+                    resetSlect($town);
+                    opts.citys.every(function (city) {
+                        if (city[value] === code) {
+                            $town.append(createOpts(city.area, name, value));
+                            return false;
+                        }
+                        return true;
+                    })
+
+
+                })
+
+
+
+            }
+
+
+
+            function resetSlect($el) {
+                $el.html('<option value="">请选择</option>');
+                $el.val("")
+            }
+
+
+
+            function getOptsArr(ori_data) {
+                var result = {
+                    provinces: [],
+                    citys: [],
+                    towns: []
+                };
+
+                result.provinces = ori_data;
+
+                $(result.provinces).each(function (index, province) {
+                    $(province.city).each(function (index, city) {
+                        result.citys.push(city)
+                    })
+                })
+
+
+                $(result.citys).each(function (index, city) {
+                    $(city.area).each(function (index, area) {
+                        result.towns.push(area)
+                    })
+                })
+
+                return result;
+
+            }
+
+            function createOpts(opts, name, value) {
+                if (!Array.isArray(opts)) return [];
+
+                return opts.map(function (opt) {
+                    return '<option value="' + opt[value] + '">' + opt[name] + '</option>'
+                })
+            }
+
+            $("#file").change(function (e) {
+                var imgBox = e.target;
+                uploadImg($('#previewer'), imgBox)
+            });
+
+
+            $('input').blur(function () {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            })
+
+            function uploadImg(element, tag) {
+                var files = tag.files;
+                element.html("");
+                if (files.length > 3) {
+                    alert('上传图片不超过三张！请重新上传！');
+                    tag.value = "";
+                    return;
+                }
+                $(files).each(function (index, file) {
+                    var imgSrc;
+                    if (!/image\/\w+/.test(file.type)) {
+                        alert("看清楚，这个需要图片！");
+                        return false;
+                    }
+                    var reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = function () {
+                        console.log(this.result);
+                        imgSrc = this.result;
+                        var imgs = document.createElement("div");
+                        $(imgs).css("background-image", 'url(' + imgSrc + ')');
+                        element.append(imgs);
+                    };
+                })
+
+            }
+
+
+
+
+
+        })
+    </script>
+
+</body>
+
+</html>
